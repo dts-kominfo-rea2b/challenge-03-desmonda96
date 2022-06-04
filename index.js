@@ -36,7 +36,21 @@ const listBelanjaan = (inputData) => {
 }
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (inputData) => {
+  let totalHarga = 0;
+  let jumlah = [];
+  let harga = [];
+  let kuantitas = [];
+
+  for (let i=0; i<inputData.length; i++){
+    harga[i] = inputData[i]['harga'];
+    kuantitas[i] = inputData[i]['kuantitas'];
+    jumlah[i] = harga[i]*kuantitas[i];
+    totalHarga += jumlah[i];
+  }
+
+  return totalHarga;
+}
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
